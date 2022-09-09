@@ -8,10 +8,10 @@ export const NavItem: React.FC<{
 	setActive: (name: string) => void;
 }> = ({ icon: Icon, name, isActive, setActive }) => {
 	const beforeStyle =
-		"before:content-[''] before:bg-white before:absolute before:w-4 before:h-4 before:left-[-34%] before:bottom-[31%] before:border-t-[7px] before:border-r-[7px] before:border-[#222] before:rounded-bl-none before:rounded-tr-full before:rounded-lg";
+		"before:content-[''] before:bg-[#f2efef] before:absolute before:w-4 before:h-4 before:left-[-34%] before:bottom-[31%] before:border-t-[7px] before:border-r-[7px] before:border-[#959C63] before:rounded-bl-none before:rounded-tr-full before:rounded-lg";
 
 	const afterStyle =
-		"after:content-[''] after:bg-white after:absolute after:w-4 after:h-4 after:right-[-34%] after:bottom-[31%] after:border-t-[7px] after:border-l-[7px] after:border-[#222] after:rounded-br-none after:rounded-tl-full after:rounded-lg";
+		"after:content-[''] after:bg-[#f2efef] after:absolute after:w-4 after:h-4 after:right-[-34%] after:bottom-[31%] after:border-t-[7px] after:border-l-[7px] after:border-[#959C63] after:rounded-br-none after:rounded-tl-full after:rounded-lg";
 
 	return (
 		<button
@@ -22,16 +22,16 @@ export const NavItem: React.FC<{
 			<span
 				className={
 					isActive
-						? ` translate-y-[-30px] z-10 ease-in-out delay-75 duration-500`
-						: "text-green-500 transform hover:scale-[1.1]"
+						? ` translate-y-[-30px] text-white z-10 ease-in-out delay-75 duration-500`
+						: "text-[#6A639C] transform hover:scale-[1.1]"
 				}>
 				<Icon />
 			</span>
 			<span
-				className={`absolute text-center  text-neutral-500
+				className={`absolute text-center font-medium 
                  ${
 										isActive
-											? "opacity-100 top-5 transform duration-500"
+											? "opacity-100 top-5 transform duration-500 text-[#6A639C]"
 											: "opacity-0 top-10 "
 									}
                 `}>
@@ -40,7 +40,7 @@ export const NavItem: React.FC<{
 
 			{isActive ? (
 				<span
-					className={`absolute bg-green-500  w-16 h-16 top-[-75%] border-8 border-[#222] rounded-full ${beforeStyle} ${afterStyle}`}></span>
+					className={`absolute bg-[#6A639C]  w-16 h-16 top-[-75%] border-8 border-[#959C63] rounded-full ${beforeStyle} ${afterStyle}`}></span>
 			) : null}
 		</button>
 	);
@@ -55,7 +55,7 @@ export const Navbar = () => {
 
 	return (
 		<nav className="bg-[#f2efef] rounded-lg w-[400px]  h-16 px-6">
-			<div className="flex items-center w-full">
+			<div className="flex items-center justify-center w-full">
 				<NavItem
 					icon={HomeIc}
 					name="Home"
